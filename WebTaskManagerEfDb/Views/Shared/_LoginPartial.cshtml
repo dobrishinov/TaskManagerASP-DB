@@ -1,0 +1,13 @@
+﻿
+<ul class="nav navbar-nav navbar-right">
+    @if (WebTaskManager.Models.AuthenticationManager.LoggedUser == null)
+    {
+        <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Login">Log in</a></li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Manage Tasks", "", "TaskManager")</li>
+            <li>@Html.ActionLink("Manage Users", "", "UsersManager")</li>
+            <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Logout">Log out</a></li>
+    }
+</ul>
