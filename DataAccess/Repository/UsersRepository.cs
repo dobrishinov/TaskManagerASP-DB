@@ -2,7 +2,7 @@
 {
     using Entity;
 
-    class UsersRepository : BaseRepository<UserEntity>
+    public class UsersRepository : BaseRepository<UserEntity>
     {
     }
 }
