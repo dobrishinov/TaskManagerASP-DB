@@ -2,7 +2,7 @@
 {
     using System;
 
-    class CommentEntity : BaseEntity
+    public class CommentEntity : BaseEntity
     {
         public int CreatorId { get; set; }
         public int TaskId { get; set; }

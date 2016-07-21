@@ -1,6 +1,6 @@
 ﻿namespace DataAccess.Entity
 {
-    class StatusEntity : BaseEntity
+    public class StatusEntity : BaseEntity
     {
         public int TaskId { get; set; }
         public int CommentId { get; set; }

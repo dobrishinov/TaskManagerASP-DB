@@ -2,7 +2,7 @@
 {
     using System;
 
-    class TimeEntity : BaseEntity
+    public class TimeEntity : BaseEntity
     {
         public int TaskId { get; set; }
         public int EstimatedTime { get; set; }
