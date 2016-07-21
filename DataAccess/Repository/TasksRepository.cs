@@ -1,6 +1,8 @@
 ﻿namespace DataAccess.Repository
 {
-    public class TasksRepository : BaseRepository<TasksRepository>
+    using Entity;
+
+    public class TasksRepository : BaseRepository<TaskEntity>
     {
     }
 }

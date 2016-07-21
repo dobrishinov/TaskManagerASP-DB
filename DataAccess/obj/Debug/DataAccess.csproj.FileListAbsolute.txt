@@ -1,0 +1,10 @@
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\DataAccess.dll.config
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\DataAccess.dll
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\DataAccess.pdb
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\EntityFramework.dll
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\EntityFramework.xml
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\obj\Debug\DataAccess.dll
+c:\users\dobrishinov\documents\visual studio 2015\Projects\WebTaskManagerEfDb\DataAccess\obj\Debug\DataAccess.pdb

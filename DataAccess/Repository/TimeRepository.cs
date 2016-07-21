@@ -1,6 +1,6 @@
 ﻿namespace DataAccess.Repository
 {
-    using DataAccess.Entity;
+    using Entity;
 
     public class TimeRepository : BaseRepository<TimeEntity>
     {

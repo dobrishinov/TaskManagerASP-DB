@@ -62,11 +62,10 @@
     <Compile Include="Repository\TasksRepository.cs" />
     <Compile Include="Repository\TimeRepository.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
+    <Compile Include="Service\Auth.cs" />
     <Compile Include="TaskManagerDbContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
