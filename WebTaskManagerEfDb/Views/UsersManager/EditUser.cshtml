@@ -1,0 +1,45 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Edit User";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Edit User</h1>
+    <tr>
+        <td>
+            @{
+                UserEntity user = (UserEntity)ViewData["user"];
+            }
+            <form action="/UsersManager/EditUser" method="post">
+                <input type="hidden" name="Id" value="@user.Id" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>First Name:</td>
+                            <td><input type="text" name="FirstName" value="@user.FirstName" /></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><input type="text" name="LastName" value="@user.LastName" /></td>
+                        </tr>
+                        <tr>
+                            <td>Username:</td>
+                            <td><input type="text" name="Username" value="@user.Username" /></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="password" name="Password" value="@user.Password" /></td>
+                        </tr>
+                        <tr>
+                            <td>Admin Status:</td>
+                            <td>@Html.CheckBox("AdminStatus", false)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/UsersManager/Index">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>

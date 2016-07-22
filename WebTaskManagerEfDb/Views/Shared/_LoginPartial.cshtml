@@ -6,8 +6,16 @@
     }
     else
     {
-        <li>@Html.ActionLink("Manage Tasks", "", "TaskManager")</li>
+        if (WebTaskManager.Models.AuthenticationManager.LoggedUser.AdminStatus == true)
+        {
+            <li>@Html.ActionLink("Manage Tasks", "", "TasksManager")</li>
             <li>@Html.ActionLink("Manage Users", "", "UsersManager")</li>
             <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Logout">Log out</a></li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Manage Tasks", "", "TasksManager")</li>
+            <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Logout">Log out</a></li>
+        }
     }
 </ul>

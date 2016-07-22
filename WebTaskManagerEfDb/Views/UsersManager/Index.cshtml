@@ -1,0 +1,47 @@
+﻿@using DataAccess.Entity;
+
+@model IEnumerable<DataAccess.Repository.UsersRepository>
+
+@{
+    ViewBag.Title = "User Manager";
+}
+
+<h2>User Manager</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EditUser", "UsersManager")
+</p>
+<table class="table">
+    <tr>
+        <td>ID</td>
+        <td>Username</td>
+        <td>Full Name</td>
+        <td>Admin Status</td>
+        <td>Action</td>
+    </tr>
+    @foreach (var item in (IEnumerable<UserEntity>)ViewData["users"])
+    {
+        var edit = "/UsersManager/EditUser?id=" + item.Id;
+        var delete = "/UsersManager/DeleteUser?id=" + item.Id;
+
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Username
+            </td>
+            <td>
+                @item.FirstName @item.LastName
+            </td>
+            <td>
+                @item.AdminStatus
+            </td>
+            <td>
+                <a href="@edit">Edit</a> |
+                <a href="@delete">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

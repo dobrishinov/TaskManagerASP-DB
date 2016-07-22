@@ -1,0 +1,45 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Edit Task";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Edit Task</h1>
+    <tr>
+        <td>
+            @{
+                TaskEntity task = (TaskEntity)ViewData["task"];
+            }
+            <form action="/TasksManager/EditTask" method="post">
+                <input type="hidden" name="Id" value="@task.Id" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>CreatorId:</td>
+                            <td><input type="text" name="CreatorId" value="@task.CreatorId" /></td>
+                        </tr>
+                        <tr>
+                            <td>ResponsibleUsers:</td>
+                            <td><input type="text" name="ResponsibleUsers" value="@task.ResponsibleUsers" /></td>
+                        </tr>
+                        <tr>
+                            <td>Title:</td>
+                            <td><input type="text" name="Title" value="@task.Title" /></td>
+                        </tr>
+                        <tr>
+                            <td>Content:</td>
+                            <td><input type="text" name="Content" value="@task.Content" /></td>
+                        </tr>
+                        <tr>
+                            <td>Creator:</td>
+                            <td><input type="text" name="Creator" value="@task.Creator" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/TasksManager/Index">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>

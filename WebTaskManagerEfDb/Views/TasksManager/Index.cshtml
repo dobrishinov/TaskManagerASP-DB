@@ -1,0 +1,51 @@
+﻿@using DataAccess.Entity;
+
+@model IEnumerable<DataAccess.Repository.TasksRepository>
+
+@{
+    ViewBag.Title = "Task Manager";
+}
+
+<h2>Task Manager</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EditTask", "TasksManager")
+</p>
+<table class="table">
+    <tr>
+        <td>ID</td>
+        <td>ResponsibleUsers</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Creator</td>
+        <td>Action</td>
+    </tr>
+    @foreach (var item in (IEnumerable<TaskEntity>)ViewData["tasks"])
+    {
+        var edit = "/TasksManager/EditTask?id=" + item.Id;
+        var delete = "/TasksManager/DeleteTask?id=" + item.Id;
+
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.ResponsibleUsers
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Content
+            </td>
+            <td>
+                @item.Creator
+            </td>
+            <td>
+                <a href="@edit">Edit</a> |
+                <a href="@delete">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
