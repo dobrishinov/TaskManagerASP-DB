@@ -2,9 +2,10 @@
 {
     using DataAccess.Entity;
     using DataAccess.Repository;
+    using System.Linq;
     using System.Web.Mvc;
     using WebTaskManager.Models;
-
+    using WebTaskManagerEfDb.ViewModels.Users;
     public class UsersManagerController : Controller
     {
         public ActionResult Index()
@@ -12,13 +13,15 @@
             if (AuthenticationManager.LoggedUser == null)
                 return RedirectToAction("Login", "Home");
 
-            UsersRepository usersRepository = new UsersRepository();
-            ViewData["users"] = usersRepository.GetAll();
+            UsersRepository repo = new UsersRepository();
+            UsersListVM model = new UsersListVM() ;
+            model.Items = repo.GetAll().ToList();
 
-            return View();
+
+            return View(model);
         }
         [HttpGet]
-        public ActionResult EditUser(int? id)
+        public ActionResult Edit(int? id)
         {
             if (AuthenticationManager.LoggedUser == null)
                 return RedirectToAction("Login", "Home");
@@ -31,23 +34,37 @@
             else
                 user = usersRepository.GetById(id.Value);
 
-            ViewData["user"] = user;
+            UsersEditVM model = new UsersEditVM();
+            model.Id = user.Id;
+            model.FirstName = user.FirstName;
+            model.LastName = user.LastName;
+            model.Username = user.Username;
+            model.Password = user.Password;
+            model.AdminStatus = user.AdminStatus;
 
-            return View();
+            return View(model);
         }
+
         [HttpPost]
-        public ActionResult EditUser(UserEntity user)
+        public ActionResult Edit(UsersEditVM model)
         {
             if (AuthenticationManager.LoggedUser == null)
                 return RedirectToAction("Login", "Home");
 
             UsersRepository usersRepository = new UsersRepository();
-            usersRepository.Save(user);
+            UserEntity entity = new UserEntity();
+            entity.Id = model.Id;
+            entity.FirstName = model.FirstName;
+            entity.LastName = model.LastName;
+            entity.Username = model.Username;
+            entity.Password = model.Password;
+            entity.AdminStatus = model.AdminStatus;
+            usersRepository.Save(entity);
 
             return RedirectToAction("Index", "UsersManager");
         }
 
-        public ActionResult DeleteUser(int id)
+        public ActionResult Delete(int id)
         {
             if (AuthenticationManager.LoggedUser == null)
                 return RedirectToAction("Login", "Home");

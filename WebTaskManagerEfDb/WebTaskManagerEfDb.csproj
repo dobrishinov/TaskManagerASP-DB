@@ -138,6 +138,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthenticationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BaseEditVM.cs" />
+    <Compile Include="ViewModels\BaseListVM.cs" />
+    <Compile Include="ViewModels\Tasks\TasksEditVM.cs" />
+    <Compile Include="ViewModels\Tasks\TasksListVM.cs" />
+    <Compile Include="ViewModels\Users\UsersEditVM.cs" />
+    <Compile Include="ViewModels\Users\UsersListVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -174,9 +180,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UsersManager\Index.cshtml" />
-    <Content Include="Views\UsersManager\EditUser.cshtml" />
+    <Content Include="Views\UsersManager\Edit.cshtml" />
     <Content Include="Views\TasksManager\Index.cshtml" />
-    <Content Include="Views\TasksManager\EditTask.cshtml" />
+    <Content Include="Views\TasksManager\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

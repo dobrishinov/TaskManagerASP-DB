@@ -1,47 +1,44 @@
-﻿@using DataAccess.Entity;
-
-@model IEnumerable<DataAccess.Repository.UsersRepository>
+﻿@model WebTaskManagerEfDb.ViewModels.Users.UsersListVM
 
 @{
-    ViewBag.Title = "User Manager";
+    ViewBag.Title = "Users";
 }
 
-<h2>User Manager</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "EditUser", "UsersManager")
+    @Html.ActionLink("Create new user", "Edit")
 </p>
-<table class="table">
-    <tr>
-        <td>ID</td>
-        <td>Username</td>
-        <td>Full Name</td>
-        <td>Admin Status</td>
-        <td>Action</td>
-    </tr>
-    @foreach (var item in (IEnumerable<UserEntity>)ViewData["users"])
-    {
-        var edit = "/UsersManager/EditUser?id=" + item.Id;
-        var delete = "/UsersManager/DeleteUser?id=" + item.Id;
 
+
+<table class="table table-hover">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Admin Status</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model.Items)
+    {
         <tr>
             <td>
-                @item.Id
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
             </td>
             <td>
                 @item.Username
             </td>
             <td>
-                @item.FirstName @item.LastName
-            </td>
-            <td>
                 @item.AdminStatus
             </td>
             <td>
-                <a href="@edit">Edit</a> |
-                <a href="@delete">Delete</a>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
     }
-
 </table>

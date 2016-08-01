@@ -15,5 +15,7 @@
         public DbSet<TaskEntity> Tasks { get; set; }
         public DbSet<TimeEntity> Time { get; set; }
         public DbSet<UserEntity> Users { get; set; }
+
+        public System.Data.Entity.DbSet<WebTaskManagerEfDb.ViewModels.BaseEditVM> BaseEditVMs { get; set; }
     }
 }
